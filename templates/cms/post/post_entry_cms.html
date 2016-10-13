@@ -1,10 +1,6 @@
 {% extends 'base.html' %}
 {% load cms_tags %}
 {% block body_block %}
-    <div class="">
-        <a href="{% url 'post-edit' slug=post.slug pk=post.pk %}">Edit</a>
-        <a href="{% url 'post-delete' pk=post.pk %}">Delete</a>
-    </div>
     <div class="postBox">
         <div class="postTitle">
             <h2>{{ post.title }}</h2>
@@ -28,10 +24,6 @@
 
         <div class="postComment">
             {% comments_tag pk=post.pk %}
-            <form method="post" action="{% url 'post-detail' slug=post.slug pk=post.pk %}">
-                {% csrf_token %}
-                {{ comment_form }}
-            </form>
         </div>
     </div>
 {% endblock %}

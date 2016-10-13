@@ -10,8 +10,9 @@
                     {% else %}
                         <p style="color: red;">Not approved</p>
                     {% endif %}
-                <a href="">Edit</a>
-                <a href="">Delete</a>
+                <a href="{% url 'comment-approved' pk=comment.pk %}">Approve</a>
+                <a href="{% url 'comment-edit' pk=comment.pk %}">Edit</a>
+                <a href="{% url 'comment-delete' pk=comment.pk %}">Delete</a>
                 </div>
                 <div class="commentContent">
                     {{ comment.content }}
