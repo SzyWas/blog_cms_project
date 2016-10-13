@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load cms_tags %}
+{% block body_block %}
+    <div class="">
+        <a href="{% url 'post-edit' slug=post.slug pk=post.pk %}">Edit</a>
+        <a href="{% url 'post-delete' pk=post.pk %}">Delete</a>
+    </div>
+    <div class="postBox">
+        <div class="postTitle">
+            <h2>{{ post.title }}</h2>
+        </div>
+
+        <div class="postDate">
+            <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+            <small> {{ post.published_date|date:"M d, Y " }}</small>
+        </div>
+
+        <div class="postContent">
+            {% if post.image %}
+                <img src="{{ MEDIA_URL }}{{ post.image }}" class="img-fluid" alt="Responsive image"/>
+            {% endif %}
+            <p>{{ post.content|linebreaksbr }}</p>
+        </div>
+
+        <div class="postFooter">
+            <p>posted by <strong>{{ post.author }}</strong></p>
+        </div>
+
+        <div class="postComment">
+            {% comments_tag pk=post.pk %}
+            <form method="post" action="{% url 'post-detail' slug=post.slug pk=post.pk %}">
+                {% csrf_token %}
+                {{ comment_form }}
+            </form>
+        </div>
+    </div>
+{% endblock %}

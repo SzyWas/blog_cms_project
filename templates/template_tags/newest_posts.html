@@ -1,0 +1,4 @@
+<h3>Newest Posts</h3>
+{% for post in newest_posts %}
+    <a href={% url 'post-detail' slug=post.slug pk=post.pk %}>{{ post.title }}</a><br/>
+{% endfor %}

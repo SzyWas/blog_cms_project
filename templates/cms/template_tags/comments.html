@@ -1,0 +1,33 @@
+{% if comments %}
+    <br/>
+    <br/>
+    {% for comment in comments %}
+        <div class="thumbnail">
+            <div class="caption">
+                <div class="commentAprove">
+                    {% if comment.approved %}
+                        <p style="color: green;"> Approved</p>
+                    {% else %}
+                        <p style="color: red;">Not approved</p>
+                    {% endif %}
+                <a href="">Edit</a>
+                <a href="">Delete</a>
+                </div>
+                <div class="commentContent">
+                    {{ comment.content }}
+                </div>
+                <div class="commentHeader">
+                    <span class="small">
+                        posted by
+                        <strong>{{ comment.author }}</strong>
+                        <br/>
+                        at {{ comment.date }}
+                    </span>
+                </div>
+                <br/>
+            </div>
+        </div>
+    {% endfor %}
+{% endif %}
+
+

@@ -1,0 +1,13 @@
+{% extends 'cms_base.html' %}
+{% block title_block %}
+    Delete {{ object }}
+{% endblock %}
+{% block body_block %}
+    <div class="commentForm">xXx
+        <h1>Delete</h1>
+        <form action="" method="post">{% csrf_token %}
+            <p>Are you sure you want to delete "{{ object }}"?</p>
+            <input type="submit" value="Confirm"/>
+        </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% if comments %}
+    <br/>
+    <br/>
+    {% for comment in comments %}
+        {% if comment.approved %}
+            <div class="thumbnail">
+                <div class="caption">
+                    <div class="commentContent">
+                        {{ comment.content }}
+                    </div>
+                    <div class="commentHeader">
+                    <span class="small">
+                        posted by
+                        <strong>{{ comment.author }}</strong>
+                        <br/>
+                        at {{ comment.date }}
+                    </span>
+                    </div>
+                    <br/>
+                </div>
+            </div>
+        {% endif %}
+    {% endfor %}
+{% endif %}
+
+

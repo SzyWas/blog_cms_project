@@ -1,0 +1,15 @@
+{% extends 'cms_base.html' %}
+{% load blog_tags %}
+{% block title_block %}
+    Edit {{ object|class_name }} {{ object.name }}
+{% endblock %}
+{% block body_block %}
+    <div class="commentForm">
+    <h1>Edit {{ object.get_class_name }} </h1>
+        <form action="" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Update"/>
+        </form>
+    </div>
+{% endblock %}

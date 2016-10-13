@@ -1,0 +1,21 @@
+{% extends 'cms_base.html' %}
+{% load blog_tags %}
+{% block title_block %}
+    Author List
+{% endblock %}
+
+{% block body_block %}
+    <h1>Authors</h1>
+    {% for author in object_list %}
+        <div class="thumbnail">
+            <div class="caption" style="text-align: center;">
+                Name: {{ author.name }} <br />
+                Description: {{ author.description }}
+                <br />
+                <a href="{% url 'author-edit' slug=author.slug pk=author.pk %}"> Edit </a>
+                <a href="{% url 'author-delete' pk=author.pk %}"> Delete </a>
+            </div>
+        </div>
+    {% endfor %}
+
+{% endblock %}

@@ -1,0 +1,41 @@
+@font-face {
+    font-family: lato-regular;
+    src: url(../fonts/Lato-Regular.ttf);
+}
+
+@font-face {
+    font-family: lato-heavy-italic;
+    src: url(../fonts/Lato-HeavyItalic.ttf);
+}
+
+@font-face {
+    font-family: lato-semi-italic;
+    src: url(../fonts/Lato-SemiboldItalic.ttf);
+}
+
+@media only screen and (min-device-width: 768px) {
+
+}
+
+body {
+    font-family: lato-regular;
+    padding: 0.5em;
+}
+
+h1, h2, h3 {
+    font-family: lato-heavy-italic;
+}
+
+h4 {
+    font-family: lato-semi-italic;
+}
+
+.postTitle {
+    font-family: lato-heavy-italic;
+    text-align: center;
+}
+
+.postContent > img {
+    margin: auto;
+    display: block;
+}

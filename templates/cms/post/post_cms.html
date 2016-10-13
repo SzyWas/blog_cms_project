@@ -1,0 +1,41 @@
+{% extends 'cms_base.html' %}
+{% load blog_tags %}
+{% block title_block %}
+    Posts List
+{% endblock %}
+
+{% block body_block %}
+
+    <h1> Posts List </h1>
+    <h2>Undrafted Posts</h2>
+    {% for post in post_entries %}
+        {% if not post.draft %}
+            <div class="thumbnail">
+                <div class="caption" style="text-align: center;">
+                    {{ post.title }} - {{ post.add_date }}
+                    - {{ post.published_date }}
+                    <br/>
+                    <a href="{% url 'post-cms' slug=post.slug pk=post.pk %}"> Read </a>
+                    <a href="{% url 'post-edit' slug=post.slug pk=post.pk %}"> Edit </a>
+                    <a href="{% url 'post-delete' pk=post.pk %}"> Delete </a>
+                </div>
+            </div>
+        {% endif %}
+    {% endfor %}
+
+    <h2>Drafted Posts</h2>
+    {% for post in post_entries %}
+        {% if post.draft %}
+            <div class="thumbnail">
+                <div class="caption" style="text-align: center;">
+                    {{ post.title }} - {{ post.add_date }}
+                    - {{ post.published_date }}
+                    </br>
+                    <a href="{% url 'post-cms' slug=post.slug pk=post.pk %}"> Read </a>
+                    <a href="{% url 'post-edit' slug=post.slug pk=post.pk %}"> Edit </a>
+                    <a href="{% url 'post-delete' pk=post.pk %}"> Delete </a>
+                </div>
+            </div>
+        {% endif %}
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'cms_base.html' %}
+{% block title_block %}
+    Create
+{% endblock %}
+{% block body_block %}
+    <div class="commentForm">
+        <form action="" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Update"/>
+        </form>
+    </div>
+{% endblock %}

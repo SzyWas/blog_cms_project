@@ -1,0 +1,16 @@
+{% extends 'cms_base.html' %}
+{% load blog_tags %}
+{% block body_block %}
+
+<h1>Post CMS</h1>
+<a href="{% url 'post-create' %}">Create Post</a> <br/>
+<a href="{% url 'post-list' %}">Przegladaj Posty</a> <br/>
+
+<h1>Category CMS</h1>
+<a href="{% url 'category-create' %}">Create Category</a>
+<a href="{% url 'category-list' %}">Przegladaj category</a>
+<h1>Author CMS</h1>
+<a href="{% url 'author-create' %}">Create author</a>
+<a href="{% url 'authors-list' %}">Przegladaj author</a>
+
+{% endblock %}

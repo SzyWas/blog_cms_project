@@ -1,0 +1,21 @@
+{% extends 'cms_base.html' %}
+{% load blog_tags %}
+{% block title_block %}
+    Categories List
+{% endblock %}
+
+{% block body_block %}
+    <h1>Categories</h1>
+    {% for category in object_list %}
+        <div class="thumbnail">
+            <div class="caption" style="text-align: center;">
+                Name: {{ category.name }} <br />
+                Description: {{ category.description }}
+                <br />
+                <a href="{% url 'category-edit' slug=category.slug pk=category.pk %}"> Edit </a>
+                <a href="{% url 'category-delete' pk=category.pk %}"> Delete </a>
+            </div>
+        </div>
+    {% endfor %}
+
+{% endblock %}

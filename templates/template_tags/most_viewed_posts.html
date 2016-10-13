@@ -1,0 +1,6 @@
+<h3>Most Viewed</h3>
+{% for post in most_viewed %}
+    {% if post.views >= 1 %}
+        <a href="{% url 'post-detail' slug=post.slug pk=post.pk %}">{{ post.title }} - {{ post.views }}</a> <br/>
+    {% endif %}
+{% endfor %}
