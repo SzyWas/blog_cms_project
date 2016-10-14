@@ -1,41 +1,97 @@
-@font-face {
-    font-family: lato-regular;
-    src: url(../fonts/Lato-Regular.ttf);
-}
-
-@font-face {
-    font-family: lato-heavy-italic;
-    src: url(../fonts/Lato-HeavyItalic.ttf);
-}
-
-@font-face {
-    font-family: lato-semi-italic;
-    src: url(../fonts/Lato-SemiboldItalic.ttf);
-}
-
-@media only screen and (min-device-width: 768px) {
-
-}
-
+/*---------------FONTS----------------*/
+ 
 body {
-    font-family: lato-regular;
-    padding: 0.5em;
+  font-family: georgia !important;
 }
-
-h1, h2, h3 {
-    font-family: lato-heavy-italic;
+.postBox .postTitle h2 {
+  font-family: 'Lato', sans-serif;
+  font-weight: 900;
+  font-size: 3em;
 }
-
-h4 {
-    font-family: lato-semi-italic;
+/*---------------BASIC STUFF----------------*/
+a:hover {
+  text-decoration: none !important;
+  border-bottom: solid 2px red;
 }
-
-.postTitle {
-    font-family: lato-heavy-italic;
-    text-align: center;
+/*---------------NAVBAR----------------*/
+ul {
+  list-style-type: none;
+ 
 }
-
-.postContent > img {
-    margin: auto;
+.nawigacja li {
+  display: inline-block !important;
+  width: 10em;
+  text-align: center !important;
+  margin: 0.5em 4em;
+}
+.nawigacja li a {
+  color: #666666;
+  font-size: 1.35em;
+}
+ 
+/*---------------MAIN POST CONTEST----------------*/
+.postBox {
+  margin-bottom: 12em;
+}
+.postContent img {
+  margin-top: 2em !important;
+  margin-bottom: 2em !important;
+}
+.postBox .postContent p {
+  line-height: 1.6;
+  letter-spacing: 0.3px;
+}
+/*---------------FOOTER----------------*/
+footer p {
+  display: block;
+  margin: 4em auto 2em auto;
+  text-align: center;
+}
+@media only screen and (max-width: 1024px) {
+  .m-nav {
+    margin: 0 auto;
+    width: 10em;
+  }
+  .nawigacja {
+    padding: 0;
     display: block;
+    margin: 0 auto;
+  }
+  .nawigacja li {
+    display: block !important;
+    margin: 0;
+  }
+}
+/*---------------DESKTOP QUERIES----------------*/
+@media only screen and (min-device-width: 1024px) {
+    .container {
+        max-width: 970px !important;
+    }
+
+    ul {
+        padding-left: 80px;
+    }
+
+    body {
+        font-family: lato-regular;
+        padding: 0.5em 0;
+    }
+
+    h1, h2, h3 {
+        font-family: lato-heavy-italic;
+    }
+
+    h4 {
+        font-family: lato-semi-italic;
+    }
+
+    .postTitle {
+        font-family: lato-heavy-italic;
+        text-align: center;
+    }
+
+    .postContent > img {
+        margin: auto;
+        display: block;
+    }
 }

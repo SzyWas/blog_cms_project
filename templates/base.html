@@ -5,6 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <title>{% block title_block %}{% endblock %}</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,900" rel="stylesheet">
     <link rel="stylesheet" href="{% static "css/styles.css" %}" type="text/css"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -15,8 +16,26 @@
             crossorigin="anonymous"></script>
 </head>
 <body>
-<div class="container">
-    {% block body_block %} {% endblock %}
-</div>
+  <div class="container">
+      <div class="m-nav">
+        <ul class="nawigacja">
+          <li><a href="#">Articles</a></li>
+          <li><a href="#">Archives</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      {% block body_block %} {% endblock %}
+      <div class="row">
+          <div class="col-xs-6 col-md-6 col-lg-6">
+              {% most_viewed_tag %}
+          </div>
+          <div class="col-xs-6 col-md-6 col-lg-6">
+              {% newest_posts_tag %}
+          </div>
+      </div>
+      <footer>
+        <p>Copyright © 2016 Szymon Wąsiewski · <a href="#">Archives</a> · <a href="#">Search</a></p>
+      </footer>
+  </div>
 </body>
 </html>
